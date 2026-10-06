@@ -1,0 +1,280 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 4 /Kids [4 0 R 6 0 R 8 0 R 10 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 960 540] /Contents 5 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+5 0 obj
+<< /Length 564 >>
+stream
+0.07 0.09 0.12 rg
+0 0 960 540 re f
+0.35 0.85 0.62 rg
+0 532 960 8 re f
+0.93 0.95 0.96 rg
+BT
+/F1 32 Tf
+64 468 Td
+(Pocketful stage 1) Tj
+ET
+BT
+/F1 18 Tf
+64 416 Td
+(Band Desktop factory) Tj
+ET
+BT
+/F1 18 Tf
+64 388 Td
+(Team: Kaushik Itagi B) Tj
+ET
+BT
+/F1 18 Tf
+64 360 Td
+(github.com/kaushik-i-b/pocketful-stage-1) Tj
+ET
+BT
+/F1 18 Tf
+64 316 Td
+(147 shipped checks passed, 0 failed) Tj
+ET
+BT
+/F1 18 Tf
+64 288 Td
+(Hidden tests: not run, result unknown) Tj
+ET
+BT
+/F1 18 Tf
+64 260 Td
+(Token and dollar cost: not measured) Tj
+ET
+BT
+/F1 18 Tf
+64 232 Td
+(Stage claimed: 1) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 960 540] /Contents 7 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 817 >>
+stream
+0.07 0.09 0.12 rg
+0 0 960 540 re f
+0.35 0.85 0.62 rg
+0 532 960 8 re f
+0.93 0.95 0.96 rg
+BT
+/F1 32 Tf
+64 468 Td
+(What was measured) Tj
+ET
+BT
+/F1 18 Tf
+64 416 Td
+(Revision 7e0beb83b35c3091bf054c7607c5f1c7b7613a7a) Tj
+ET
+BT
+/F1 18 Tf
+64 388 Td
+(Official isolated harness, stage 1: 147 passed, 0 failed) Tj
+ET
+BT
+/F1 18 Tf
+64 360 Td
+(Claimed stage: 1) Tj
+ET
+BT
+/F1 18 Tf
+64 332 Td
+(The same runs then failed the stage 2 suite) Tj
+ET
+BT
+/F1 18 Tf
+64 304 Td
+(Stage 2 is not claimed) Tj
+ET
+BT
+/F1 18 Tf
+64 260 Td
+(Dispatch 2026-10-06T05:03:25Z) Tj
+ET
+BT
+/F1 18 Tf
+64 232 Td
+(Coordinator report 2026-10-06T05:19:11Z) Tj
+ET
+BT
+/F1 18 Tf
+64 204 Td
+(Elapsed time: 15 minutes 46 seconds) Tj
+ET
+BT
+/F1 18 Tf
+64 176 Td
+(Hidden tests were not run) Tj
+ET
+BT
+/F1 18 Tf
+64 148 Td
+(No token count and no dollar cost were measured) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 960 540] /Contents 9 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 747 >>
+stream
+0.07 0.09 0.12 rg
+0 0 960 540 re f
+0.35 0.85 0.62 rg
+0 532 960 8 re f
+0.93 0.95 0.96 rg
+BT
+/F1 32 Tf
+64 468 Td
+(The factory) Tj
+ET
+BT
+/F1 18 Tf
+64 416 Td
+(Three Band Desktop seats) Tj
+ET
+BT
+/F1 18 Tf
+64 388 Td
+(Coordinator, Developer, Reviewer) Tj
+ET
+BT
+/F1 18 Tf
+64 360 Td
+(Runtime: Cursor ACP, model recorded as auto) Tj
+ET
+BT
+/F1 18 Tf
+64 332 Td
+(One shared Git history, one worktree per seat) Tj
+ET
+BT
+/F1 18 Tf
+64 304 Td
+(The Reviewer ran the official isolated harness) Tj
+ET
+BT
+/F1 18 Tf
+64 276 Td
+(on the Developer revision) Tj
+ET
+BT
+/F1 18 Tf
+64 232 Td
+(Both Developer commits have saved stage 1) Tj
+ET
+BT
+/F1 18 Tf
+64 204 Td
+(results of 147 passed and 0 failed) Tj
+ET
+BT
+/F1 18 Tf
+64 176 Td
+(No rejection or repair cycle is claimed) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 960 540] /Contents 11 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+11 0 obj
+<< /Length 818 >>
+stream
+0.07 0.09 0.12 rg
+0 0 960 540 re f
+0.35 0.85 0.62 rg
+0 532 960 8 re f
+0.93 0.95 0.96 rg
+BT
+/F1 32 Tf
+64 468 Td
+(Room export) Tj
+ET
+BT
+/F1 18 Tf
+64 416 Td
+(room.json is the Band full-session export) Tj
+ET
+BT
+/F1 18 Tf
+64 388 Td
+(Room 09670909-0fca-4b28-abe1-a6df7191f4ee) Tj
+ET
+BT
+/F1 18 Tf
+64 360 Td
+(scope: full) Tj
+ET
+BT
+/F1 18 Tf
+64 332 Td
+(exportedAt: 2026-10-06T05:45:05.864Z) Tj
+ET
+BT
+/F1 18 Tf
+64 304 Td
+(1810 messages, earliest 2026-10-06T05:24:41.978Z) Tj
+ET
+BT
+/F1 18 Tf
+64 260 Td
+(Those messages are the later silence loop.) Tj
+ET
+BT
+/F1 18 Tf
+64 232 Td
+(The file does not contain the dispatch) Tj
+ET
+BT
+/F1 18 Tf
+64 204 Td
+(or the verification sentence.) Tj
+ET
+BT
+/F1 18 Tf
+64 176 Td
+(No credential shape was found in the file.) Tj
+ET
+BT
+/F1 18 Tf
+64 148 Td
+(No room recording of this run was found.) Tj
+ET
+endstream
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000134 00000 n 
+0000000204 00000 n 
+0000000330 00000 n 
+0000000945 00000 n 
+0000001071 00000 n 
+0000001939 00000 n 
+0000002065 00000 n 
+0000002863 00000 n 
+0000002991 00000 n 
+trailer << /Size 12 /Root 1 0 R >>
+startxref
+3861
+%%EOF

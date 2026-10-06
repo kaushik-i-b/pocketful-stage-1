@@ -2,7 +2,7 @@
 
 Team: Kaushik Itagi B (`kaushik-i-b`). Public repository: https://github.com/kaushik-i-b/pocketful-stage-1.
 
-This repository is the Pocketful stage 1 result from one Band Desktop room. The service is in `stage-1/`. The factory that produced it is described in `FACTORY.md`. Seat instructions are in `mandates/`. The room log belongs in `room.json` and is not in this tree yet. The official full-session download has not been saved.
+This repository is the Pocketful stage 1 result from one Band Desktop room. The service is in `stage-1/`. The factory that produced it is described in `FACTORY.md`. Seat instructions are in `mandates/`. `room.json` is the Band console full-session export for room `09670909-0fca-4b28-abe1-a6df7191f4ee`, saved unchanged. Its `scope` is `full`. The messages in that file begin at `2026-10-06T05:24:41.978Z`, after the Coordinator's verification message.
 
 ## What this tree claims
 

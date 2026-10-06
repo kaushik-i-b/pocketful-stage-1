@@ -2,22 +2,29 @@
 
 Public repository: https://github.com/kaushik-i-b/pocketful-stage-1
 
-This draft does not claim the entry is eligible. `room.json` is still absent, so `python -m harness check` exits 1. The form has not been submitted.
+This text does not claim the entry is eligible. Hidden tests were not run. Token counts and dollar cost were not measured. No rejection or repair cycle is claimed. The official `harness check` on this tree passed gates 1, 2, and the mandate part of gate 4. The isolated stage 1 run was not repeated because the service files did not change.
+
+## Project title
+
+Pocketful stage 1
 
 ## Short description
 
-Three Band Desktop seats, using Cursor ACP with the signed-in Auto model, built and checked a Pocketful stage 1 service in one room. The Developer committed `7e0beb83b35c3091bf054c7607c5f1c7b7613a7a`. The Reviewer ran the official isolated harness on that commit. Stage 1 shipped checks: 147 passed, 0 failed. The Coordinator reported that revision verified at `2026-10-06T05:19:11Z`. An independent isolated run of the same commit, after that report, exited 0 with the same stage 1 counts. The stage 2 suite failed one route test. Stage 2 is not claimed. Token cost for the room was not measured. Elapsed time from the human dispatch to the Coordinator report was 15 minutes 46 seconds.
+Three Band Desktop seats built and checked a Pocketful stage 1 service. Shipped stage 1 checks: 147 passed, 0 failed, on commit 7e0beb83b35c3091bf054c7607c5f1c7b7613a7a. Hidden tests were not run. Token and dollar cost were not measured. Stage 2 is not claimed.
 
-## Video clips still required
+## Long description
 
-No video file exists.
+Coordinator, Developer, and Reviewer are Band Desktop seats running Cursor ACP. The recorded model is auto, the signed-in Cursor default. One human message dispatched the stage 1 task at 2026-10-06T05:03:25Z. The Developer committed 9efc373661c0135a72f75e53d513b4d007be9040 and then 7e0beb83b35c3091bf054c7607c5f1c7b7613a7a. Saved isolated checks report 147 passed and 0 failed for both revisions. The Reviewer checked the second revision in isolation from 2026-10-06T05:17:28Z to 2026-10-06T05:17:46Z. The Coordinator reported that revision verified at 2026-10-06T05:19:11Z, 15 minutes 46 seconds after the dispatch. An independent isolated run of the published tree also reported stage 1 pass, 147 passed, 0 failed. The same runs printed a stage 2 failure. Stage 2 is not claimed.
 
-1. Room recording, from the start of the human dispatch through the Coordinator's "Stage 1 is verified" message. The room is "Pocketful stage 1", id `09670909-0fca-4b28-abe1-a6df7191f4ee`. The clip needs to show the Coordinator handing work to the Developer, the Developer handing commit `7e0beb83b35c3091bf054c7607c5f1c7b7613a7a` to the Reviewer, and the Reviewer answering with the isolated result.
-2. Service walkthrough of the committed stage 1 service, not the Phoenix demo on port 3000. From `stage-1/`, run the `RUN.md` command, then show `GET /health` and one signed-up user creating a payment with `POST /payments`.
+room.json is the Band full-session export for room 09670909-0fca-4b28-abe1-a6df7191f4ee, scope full, exported at 2026-10-06T05:45:05.864Z. Its messages start at 2026-10-06T05:24:41.978Z and do not include the dispatch or the verification sentence. No credential shape was found in that file. No room recording of this run was found. The Phoenix demo video is not this run.
 
-## Form fields that are not ready
+## Tags
 
-- Public repository URL, until the push in this packaging step is confirmed
-- `room.json` in that repository
-- Video upload
-- Any field that asks for token cost or model spend
+Band, Cursor, Go, Docker
+
+## Uploads
+
+- Cover: `cover.png`
+- Slides: `presentation.pdf`
+- Repository: https://github.com/kaushik-i-b/pocketful-stage-1
+- Video: none. Screen recordings on this machine are from 27 September 2026 or earlier, or are other products. `Phoenix_Demo.mp4` was not used.
