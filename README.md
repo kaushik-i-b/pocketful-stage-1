@@ -1,6 +1,6 @@
 # Pocketful stage 1
 
-Team: Kaushik Itagi B (`kaushik-i-b`).
+Team: Kaushik Itagi B (`kaushik-i-b`). Public repository: https://github.com/kaushik-i-b/pocketful-stage-1.
 
 This repository is the Pocketful stage 1 result from one Band Desktop room. The service is in `stage-1/`. The factory that produced it is described in `FACTORY.md`. Seat instructions are in `mandates/`. The room log belongs in `room.json` and is not in this tree yet. The official full-session download has not been saved.
 

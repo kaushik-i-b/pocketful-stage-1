@@ -1,6 +1,8 @@
 # Submission text
 
-Paste only after `room.json` is the official full-session download and the public repository URL exists. This draft does not claim the entry is eligible.
+Public repository: https://github.com/kaushik-i-b/pocketful-stage-1
+
+This draft does not claim the entry is eligible. `room.json` is still absent, so `python -m harness check` exits 1. The form has not been submitted.
 
 ## Short description
 
