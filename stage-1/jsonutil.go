@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"io"
-	"math"
+	"math/big"
 	"net/http"
 	"regexp"
 	"strconv"
@@ -15,7 +15,7 @@ import (
 const (
 	maxAmount  int64 = 1_000_000_000
 	maxBalance int64 = 1 << 53
-	maxBody          = 1 << 20
+	maxBody          = 16 << 20
 )
 
 var (
@@ -158,11 +158,12 @@ func norm(v any) any {
 		if ok {
 			return n
 		}
-		f, err := t.Float64()
-		if err != nil || math.IsNaN(f) || math.IsInf(f, 0) {
+		f, _, err := big.ParseFloat(t.String(), 10, 256, big.ToNearestEven)
+		if err != nil {
 			return t.String()
 		}
-		return f
+		out, _ := f.Float64()
+		return out
 	default:
 		return v
 	}
@@ -173,14 +174,15 @@ func parseIntegral(v any) (int64, bool) {
 	if !ok {
 		return 0, false
 	}
-	f, err := n.Float64()
-	if err != nil || math.IsNaN(f) || math.IsInf(f, 0) || f != math.Trunc(f) {
+	bf, _, err := big.ParseFloat(n.String(), 10, 256, big.ToNearestEven)
+	if err != nil || !bf.IsInt() {
 		return 0, false
 	}
-	if math.Abs(f) > float64(maxBalance) {
+	i, acc := bf.Int64()
+	if acc != big.Exact || i > maxBalance || i < -maxBalance {
 		return 0, false
 	}
-	return int64(f), true
+	return i, true
 }
 
 func parseAmount(v any) (int64, bool) {
@@ -196,18 +198,11 @@ func requireAmount(obj map[string]any) (int64, *apiError) {
 	if !ok {
 		return 0, validation("amount is required")
 	}
-	switch v.(type) {
-	case json.Number:
-		n, ok := parseAmount(v)
-		if !ok {
-			return 0, validation("amount must be an integer from 1 to 1000000000")
-		}
-		return n, nil
-	case string, bool:
+	n, ok := parseAmount(v)
+	if !ok {
 		return 0, validation("amount must be an integer from 1 to 1000000000")
-	default:
-		return 0, malformed("amount has the wrong type")
 	}
+	return n, nil
 }
 
 func optionalNote(obj map[string]any) (string, *apiError) {

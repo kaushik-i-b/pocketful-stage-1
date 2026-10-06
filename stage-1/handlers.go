@@ -399,6 +399,7 @@ func (a *App) payRequest(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) declineRequest(w http.ResponseWriter, r *http.Request) {
+	_, _ = readBody(r)
 	a.mu.Lock()
 	defer a.mu.Unlock()
 	user, aerr := a.auth(r)
@@ -428,6 +429,7 @@ func (a *App) declineRequest(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) cancelRequest(w http.ResponseWriter, r *http.Request) {
+	_, _ = readBody(r)
 	a.mu.Lock()
 	defer a.mu.Unlock()
 	user, aerr := a.auth(r)
@@ -457,33 +459,40 @@ func (a *App) cancelRequest(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) listRequests(w http.ResponseWriter, r *http.Request) {
-	limit, offset, huge, aerr := parsePage(r)
-	if aerr != nil {
-		aerr.write(w)
-		return
-	}
+	limit, offset, huge, pageErr := parsePage(r)
 	q := r.URL.Query()
 	direction := ""
+	var filterErr *apiError
 	if vals, ok := q["direction"]; ok {
 		if len(vals) == 0 || (vals[0] != "incoming" && vals[0] != "outgoing") {
-			validation("direction must be incoming or outgoing").write(w)
-			return
+			filterErr = validation("direction must be incoming or outgoing")
+		} else {
+			direction = vals[0]
 		}
-		direction = vals[0]
 	}
 	status := ""
-	if vals, ok := q["status"]; ok {
-		if len(vals) == 0 || !validStatus(vals[0]) {
-			validation("status is invalid").write(w)
-			return
+	if filterErr == nil {
+		if vals, ok := q["status"]; ok {
+			if len(vals) == 0 || !validStatus(vals[0]) {
+				filterErr = validation("status is invalid")
+			} else {
+				status = vals[0]
+			}
 		}
-		status = vals[0]
 	}
 	a.mu.Lock()
 	defer a.mu.Unlock()
 	user, aerr := a.auth(r)
 	if aerr != nil {
 		aerr.write(w)
+		return
+	}
+	if pageErr != nil {
+		pageErr.write(w)
+		return
+	}
+	if filterErr != nil {
+		filterErr.write(w)
 		return
 	}
 	list := make([]*MoneyRequest, 0)
@@ -520,16 +529,16 @@ func (a *App) listRequests(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) activity(w http.ResponseWriter, r *http.Request) {
-	limit, offset, huge, aerr := parsePage(r)
-	if aerr != nil {
-		aerr.write(w)
-		return
-	}
+	limit, offset, huge, pageErr := parsePage(r)
 	a.mu.Lock()
 	defer a.mu.Unlock()
 	user, aerr := a.auth(r)
 	if aerr != nil {
 		aerr.write(w)
+		return
+	}
+	if pageErr != nil {
+		pageErr.write(w)
 		return
 	}
 	list := make([]*Payment, 0)
@@ -596,10 +605,6 @@ func (a *App) createSplit(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		seen[h] = true
-		if !handleRe.MatchString(h) {
-			validation("participant handle is invalid").write(w)
-			return
-		}
 	}
 	participants := make([]*User, 0, len(handles))
 	for _, h := range handles {
@@ -707,10 +712,6 @@ func (a *App) createSettlement(w http.ResponseWriter, r *http.Request) {
 			aerr.write(w)
 			return
 		}
-		if !handleRe.MatchString(fromHandle) || !handleRe.MatchString(toHandle) {
-			validation("transfer handle is invalid").write(w)
-			return
-		}
 		fromID, fromOK := a.world.handleIndex[fromHandle]
 		toID, toOK := a.world.handleIndex[toHandle]
 		from := a.world.Users[fromID]
@@ -761,9 +762,6 @@ func (a *App) createSettlement(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) resolveHandle(handle string, caller *User, selfCode, selfMsg string) (*User, *apiError) {
-	if !handleRe.MatchString(handle) {
-		return nil, validation("handle is invalid")
-	}
 	if caller != nil && handle == caller.Handle {
 		return nil, &apiError{Status: http.StatusUnprocessableEntity, Code: selfCode, Msg: selfMsg}
 	}

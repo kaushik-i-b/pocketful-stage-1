@@ -11,7 +11,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-const bcryptCost = bcrypt.DefaultCost
+const bcryptCost = bcrypt.MinCost
 
 type User struct {
 	ID           string `json:"id"`

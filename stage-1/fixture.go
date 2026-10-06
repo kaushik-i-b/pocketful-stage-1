@@ -373,6 +373,7 @@ func validateImported(w *world) *apiError {
 			return validation("invalid operator")
 		}
 	}
+	seenIdem := map[string]bool{}
 	for _, rec := range w.Idem {
 		if rec == nil || rec.UserID == "" || rec.Method == "" || rec.Path == "" || rec.Key == "" {
 			return validation("invalid idempotency state")
@@ -380,6 +381,11 @@ func validateImported(w *world) *apiError {
 		if w.Users[rec.UserID] == nil || !json.Valid(rec.Canon) || !json.Valid(rec.Response) {
 			return validation("invalid idempotency state")
 		}
+		comp := idemComposite(rec.UserID, rec.Method, rec.Path, rec.Key)
+		if seenIdem[comp] {
+			return validation("invalid idempotency state")
+		}
+		seenIdem[comp] = true
 		canon, err := recanon(rec.Canon)
 		if err != nil {
 			return validation("invalid idempotency state")
